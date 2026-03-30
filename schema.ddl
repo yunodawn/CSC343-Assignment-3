@@ -1,6 +1,5 @@
 -- explnation of database goes here
 -- TODO: how tf do i enforce minimum of 10 seats in a venue
--- maggie if u know how to do this pls lmk 
 
 -- COULD NOT:
 
@@ -72,7 +71,7 @@ CREATE TABLE SECTION(
     section_id SERIAL PRIMARY KEY,
     venue_id INT NOT NULL REFERENCES Venue(venue_id),
     section_name VARCHAR(50) NOT NULL,
-    UNIQUE (venue_id, name)
+    UNIQUE (venue_id, section_name)
 );
 
 -- a concert 
@@ -100,7 +99,7 @@ CREATE TABLE Concert(
 CREATE TABLE ConcertSectionPrice(
     price_id SERIAL PRIMARY KEY,
     concert_id INT NOT NULL REFERENCES Concert(concert_id),
-    section_id INT NOT NULL REFERENCES Section(concert_id),
+    section_id INT NOT NULL REFERENCES Section(section_id),
     price NUMERIC (10, 2) NOT NULL CHECK (price > 0),
     UNIQUE (concert_id, section_id)
 );
@@ -122,7 +121,7 @@ CREATE TABLE AppUser(
 -- add a UNIQUE constraint to make sure that 
 -- no two users can buy the same seat for the same concert 
 CREATE TABLE TICKET(
-    ticket_id SERIAL PRIMARY KEY
+    ticket_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL REFERENCES AppUser(user_id),
     concert_id INT NOT NULL REFERENCES Concert(concert_id),
     seat_id INT NOT NULL REFERENCES Seat(seat_id),
