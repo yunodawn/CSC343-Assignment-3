@@ -4,16 +4,6 @@ DROP SCHEMA IF EXISTS TicketSchema CASCADE;
 CREATE SCHEMA TicketSchema;
 SET SEARCH_PATH TO TicketSchema;
 
--- an owner of one or more venues
--- <owner_id> is the invented primary key
--- <name> is the string representing who the owner is 
--- <phone> is the owners phone number 
-CREATE TABLE Owner(
-    owner_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    phone VARCHAR(20) NOT NULL UNIQUE
-);
-
 -- a venue where concerts are held
 -- <venue_id> is the invented primary key 
 -- <owner_id> is the single owner of the venue 
@@ -27,3 +17,23 @@ CREATE TABLE Venue(
     city VARCHAR(100) NOT NULL,
     address VARCHAR(200) NOT NULL
 )
+
+-- an owner of one or more venues
+-- <owner_id> is the invented primary key
+-- <name> is the string representing who the owner is 
+-- <phone> is the owners phone number (unique)
+CREATE TABLE Owner(
+    owner_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL UNIQUE
+);
+
+-- a seat in a venue 
+
+-- a section in a venue 
+
+-- a concert 
+
+-- prices of tickets in a concert
+
+-- the users of the app 
