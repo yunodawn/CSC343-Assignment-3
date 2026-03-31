@@ -16,6 +16,6 @@ FROM Concert c
 LEFT JOIN Ticket t ON c.concert_id = t.concert_id
 LEFT JOIN Seat s ON t.seat_id = s.seat_id
 LEFT JOIN ConcertSectionPrice csp ON c.concert_id = csp.concert_id
-AND st.section_id = csp.section_id
+AND s.section_id = csp.section_id
 GROUP BY c.concert_id, c.name, c.venue_id
-ORDER BY tickets_sold DESC;
+ORDER BY total_tickets_sold DESC;

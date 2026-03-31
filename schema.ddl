@@ -33,7 +33,7 @@ CREATE TABLE Venue(
     name VARCHAR(100) NOT NULL,
     city VARCHAR(100) NOT NULL,
     address VARCHAR(200) NOT NULL
-)
+);
 
 -- an owner of one or more venues
 -- <owner_id> is the invented primary key
