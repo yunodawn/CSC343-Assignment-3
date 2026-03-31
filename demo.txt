@@ -1,0 +1,76 @@
+csc343h-mathu134=> \i runner.txt
+-------------------- Loading schema and data: --------------------
+
+psql:schema.ddl:22: NOTICE:  drop cascades to 2 other objects
+DETAIL:  drop cascades to table owner
+drop cascades to table appuser
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+SET
+INSERT 0 5
+INSERT 0 10
+INSERT 0 10
+DO
+INSERT 0 3
+INSERT 0 3
+INSERT 0 4
+DO
+
+-------------------- Query 1: -----------------------------------
+
+SET
+ concert_id |       concert_name       | total_tickets_sold | total_value_sold | percentage_venue_sold
+------------+--------------------------+--------------------+------------------+-----------------------
+          1 | Taylor Swift - Eras Tour |                 50 |         17500.00 |                100.00
+          2 | Coldplay - World Tour    |                  2 |           300.00 |                 20.00
+          3 | The Weeknd - After Hours |                  0 |             0.00 |                  0.00
+(3 rows)
+
+
+-------------------- Query 2: -----------------------------------
+
+SET
+ owner_id |        owner_name         | num_venues_owned
+----------+---------------------------+------------------
+        1 | Live Nation Entertainment |                4
+        2 | Indie Events              |                2
+        3 | Elon Musk                 |                2
+        4 | Eventbrite                |                1
+        5 | AEG Presents              |                1
+(5 rows)
+
+
+-------------------- Query 3: -----------------------------------
+
+SET
+       venue_name        | total_seats | accessible_seats_percentage
+-------------------------+-------------+-----------------------------
+ The Danforth Music Hall |          10 |                       30.00
+ Budweiser Stage         |          10 |                        0.00
+ Axis Club               |          10 |                        0.00
+ Velvet Underground      |          10 |                        0.00
+ Rebel Nightclub         |          10 |                        0.00
+ Scotiabank Arena        |          50 |                        0.00
+ Opera House             |          10 |                        0.00
+ Mod Club                |          10 |                        0.00
+ History                 |          10 |                        0.00
+ Rogers Centre           |          10 |                        0.00
+(10 rows)
+
+
+-------------------- Query 4: -----------------------------------
+
+SET
+   username    | tickets_purchased
+---------------+-------------------
+ playboi_farti |                50
+(1 row)

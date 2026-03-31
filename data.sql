@@ -1,7 +1,7 @@
 -- sample data for the TicketSchema database
--- NOTE: sample data here was partially generated using Microsoft Copilot (UofT instance) 
+-- NOTE: sample data was partially generated using Microsoft Copilot (UofT instance) 
 -- and then modified by hand to fit the schema and to be more realistic
--- all data here was verified manually 
+-- all data here was verified manually, some places/people are real and some are fake
 
 SET SEARCH_PATH TO TicketSchema;
 
@@ -102,6 +102,7 @@ DECLARE
 BEGIN
     -- user 1 buys 50 tickets for concert 1 
     -- buys all the seats in venue 1 which is the only one w/ 50 seats
+    -- buy all the tickets at the same time but idk if thats realistic- maggie confirm?
     FOR i IN 1..50 LOOP
         INSERT INTO Ticket (user_id, concert_id, seat_id, purchase_date) 
         VALUES (1, 1, i, '2026-01-15 10:00:00');
